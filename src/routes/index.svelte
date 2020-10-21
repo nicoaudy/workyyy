@@ -25,13 +25,12 @@
       const position = item.position.toLowerCase();
       const location = item.location.toLowerCase();
       const contract = item.contract.toLowerCase();
-      const skills = item.skills.split(',');
 
       return (
         company.includes(search.toLowerCase()) ||
         position.includes(search.toLowerCase()) ||
         location.includes(search.toLowerCase()) ||
-        contract.includes(search.toLowerCase()) ||
+        contract.includes(search.toLowerCase())
       );
     });
   };

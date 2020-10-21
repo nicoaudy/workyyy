@@ -7,7 +7,7 @@
   }
 </style>
 
-<footer class="bg-gray-200">
+<footer class="bg-gray-200 text-center">
   <p class="container text-lg py-10 max-w-4xl">
     Build with ❤️
     <a href="https://github.com/nicoaudy" target="_blank">NicoAudy</a>
