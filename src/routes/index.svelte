@@ -21,12 +21,10 @@
   <title>{APP_NAME}</title>
 </svelte:head>
 
-<div class="space-y-8">
-  {#if jobs.length}
-    {#each jobs as job}
-			<JobCard job={job} />
-    {/each}
-  {:else}
-    <p>Please wait....</p>
-  {/if}
-</div>
+{#if jobs.length}
+  {#each jobs as job}
+    <JobCard {job} />
+  {/each}
+{:else}
+  <p>Please wait....</p>
+{/if}
