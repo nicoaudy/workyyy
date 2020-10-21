@@ -8,13 +8,12 @@
   import { onMount } from 'svelte';
   import { APP_NAME } from '../constants';
   import data from '../data/db';
+  import JobCard from '../components/JobCard.svelte';
 
   let jobs = [];
 
   onMount(async () => {
-    setTimeout(() => {
-      jobs = data;
-    }, 3000);
+    jobs = data;
   });
 </script>
 
@@ -23,13 +22,11 @@
 </svelte:head>
 
 <div class="space-y-8">
-  <div>
-    <h2 class="text-8xl font-semibold">{APP_NAME}</h2>
-  </div>
-
   {#if jobs.length}
-    Jobs
+    {#each jobs as job}
+			<JobCard job={job} />
+    {/each}
   {:else}
-    <p>Loading...</p>
+    <p>Please wait....</p>
   {/if}
 </div>
