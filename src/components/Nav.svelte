@@ -1,4 +1,6 @@
 <script>
+  import { APP_NAME } from '../constants';
+
   export let segment;
 
   let mobileMenu = false;
@@ -16,7 +18,7 @@
           href="."
           class="{segment === undefined ? 'text-purple-800 hover:text-gray-600' : 'text-gray-800 hover:text-purple-600'} text-2xl text-sm font-semibold mr-4"
         >
-          WORKYY 💪
+          {APP_NAME}
         </a>
       </div>
 
