@@ -5,7 +5,17 @@
 </style>
 
 <script>
+  import { onMount } from 'svelte';
   import { APP_NAME } from '../constants';
+  import data from '../data/db';
+
+  let jobs = [];
+
+  onMount(async () => {
+    setTimeout(() => {
+      jobs = data;
+    }, 3000);
+  });
 </script>
 
 <svelte:head>
@@ -16,5 +26,10 @@
   <div>
     <h2 class="text-8xl font-semibold">{APP_NAME}</h2>
   </div>
-  <p>Read the blog post if you want to know all the juicy details 🍊</p>
+
+  {#if jobs.length}
+    Jobs
+  {:else}
+    <p>Loading...</p>
+  {/if}
 </div>
