@@ -1,5 +1,10 @@
 <script>
   export let segment;
+
+  let mobileMenu = false;
+  const toggleMenu = () => {
+    mobileMenu = !mobileMenu;
+  };
 </script>
 
 <div class="bg-white shadow">
@@ -9,24 +14,22 @@
         <a
           aria-current={segment === undefined ? 'page' : undefined}
           href="."
-          class="text-2xl text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4"
+          class="{segment === undefined ? 'text-purple-800 hover:text-gray-600' : 'text-gray-800 hover:text-purple-600'} text-2xl text-sm font-semibold mr-4"
         >
-          Workyyy 💪
+          WORKYY 💪
         </a>
       </div>
 
       <div class="hidden sm:flex sm:items-center">
         <a
-          aria-current={segment === 'blog' ? 'page' : undefined}
           href="blog"
-          class="text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4"
+          class="{segment === 'blog' ? 'text-purple-800 hover:text-gray-600 underline' : 'text-gray-800 hover:text-purple-600'} text-sm font-semibold mr-4"
         >
           Blog
         </a>
         <a
-          aria-current={segment === 'about' ? 'page' : undefined}
           href="about"
-          class="text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4"
+          class="{segment === 'about' ? 'text-purple-800 hover:text-gray-600 underline' : 'text-gray-800 hover:text-purple-600'} text-sm font-semibold mr-4"
         >
           About
         </a>
@@ -46,7 +49,7 @@
         </button>
       </div>
 
-      <div class="sm:hidden cursor-pointer">
+      <div class="sm:hidden cursor-pointer" on:click={toggleMenu}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="w-6 h-6 text-purple-600"
@@ -60,17 +63,19 @@
       </div>
     </div>
 
-    <div class="block sm:hidden bg-white border-t-2 py-2">
+    <div
+      class="{mobileMenu ? 'block' : 'hidden'} sm:hidden bg-white border-t-2 py-2"
+    >
       <div class="flex flex-col">
         <a
           href="blog"
-          class="text-gray-800 text-sm font-semibold hover:text-purple-600 mb-1"
+          class="{segment === 'blog' ? 'text-purple-800 hover:text-gray-600' : 'text-gray-800 hover:text-purple-600'} text-sm font-semibold mb-1"
         >
           Blog
         </a>
         <a
           href="about"
-          class="text-gray-800 text-sm font-semibold hover:text-purple-600 mb-1"
+          class="{segment === 'about' ? 'text-purple-800 hover:text-gray-600' : 'text-gray-800 hover:text-purple-600'} text-sm font-semibold mb-1"
         >
           About
         </a>
