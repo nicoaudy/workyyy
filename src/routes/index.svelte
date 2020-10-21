@@ -21,6 +21,10 @@
   <title>{APP_NAME}</title>
 </svelte:head>
 
+<div class="flex bg-white shadow-md my-16 mx-10 p-6 rounded">
+  <span>ruby on rails</span>
+</div>
+
 {#if jobs.length}
   {#each jobs as job}
     <JobCard {job} />
