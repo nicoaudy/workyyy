@@ -1,5 +1,17 @@
 const data = [
 	{
+		id: 6,
+		company: 'Tokopedia',
+		url: 'https://tokopedia.com',
+		position: 'Software Engineer (Back end) Intern',
+		logo:
+			'https://d2q79iu7y748jz.cloudfront.net/s/_logo/86473181bf4a2ed20f497abdb5dfd3f3',
+		location: 'Jakarta',
+		sector: 'Marketplace',
+		skills: 'golang, redis, perl',
+		contract: 'Full Time',
+	},
+	{
 		id: 1,
 		company: 'Cuvva',
 		url: 'https://cuvva.com',

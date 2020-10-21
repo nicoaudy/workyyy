@@ -9,7 +9,7 @@
   });
 </script>
 
-<div class="flex bg-white shadow-md m-4 p-4">
+<div class="flex bg-white shadow-md m-4 p-6 rounded">
   <div>
     <img src={job.logo} alt={job.name} class="h-20 w-20 rounded-full mx-auto" />
   </div>
