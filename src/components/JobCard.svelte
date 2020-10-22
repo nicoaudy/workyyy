@@ -20,11 +20,19 @@
     />
   </div>
   <div class="flex flex-col justify-between ml-4">
-    <h3 class="font-bold text-purple-500">{job.company}</h3>
+    <a
+      href={job.website}
+      target="_blank"
+      class="font-bold text-purple-500"
+    >{job.company}</a>
     <h3 class="font-bold text-xl my-2">{job.position}</h3>
     <div class="flex items-center">
-      <p class="mr-2 text-gray-700">💼 {job.contract}</p>
-      <p class="text-gray-700">📍 {job.location}</p>
+      <p class="mr-2 text-gray-700">📍 {job.location}</p>
+      <a
+        href={job.directUrl}
+        target="_blank"
+        class="text-gray-800 text-sm font-semibold border px-4 py-2 rounded-lg hover:text-pink-600 hover:border-pink-600"
+      >APPLY 👉</a>
     </div>
   </div>
   <div

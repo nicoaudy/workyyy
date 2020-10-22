@@ -6,7 +6,7 @@
 
 <script>
   import { onMount } from 'svelte';
-  import { APP_NAME } from '../constants';
+  import { APP_NAME, API_URL } from '../constants';
   import data from '../data/db';
   import JobCard from '../components/JobCard.svelte';
 
@@ -14,23 +14,30 @@
   let search = '';
 
   onMount(async () => {
-    jobs = data;
+    getJobs();
   });
 
-  const filter = () => {
-    jobs = data;
+  const getJobs = async () => {
+    try {
+      const request = await fetch(`${API_URL}/give-me-some-data`, {
+        method: 'POST',
+      });
 
+      const response = await request.json();
+      jobs = response;
+    } catch (e) {}
+  };
+
+  const filter = () => {
     jobs = jobs.filter((item) => {
       const company = item.company.toLowerCase();
       const position = item.position.toLowerCase();
       const location = item.location.toLowerCase();
-      const contract = item.contract.toLowerCase();
 
       return (
         company.includes(search.toLowerCase()) ||
         position.includes(search.toLowerCase()) ||
-        location.includes(search.toLowerCase()) ||
-        contract.includes(search.toLowerCase())
+        location.includes(search.toLowerCase())
       );
     });
   };
@@ -61,5 +68,7 @@
     <JobCard {job} />
   {/each}
 {:else}
-  <p>Please wait....</p>
+  <div class="my-16 mx-10 p-6">
+    <p>Please wait....</p>
+  </div>
 {/if}
