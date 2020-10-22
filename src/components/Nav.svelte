@@ -102,12 +102,13 @@
           >
             Join
           </a>
-          <a
-            href="."
+          <button
+            type="button"
+            on:click={openPopup}
             class="text-gray-800 text-sm font-semibold border px-4 py-1 rounded-lg hover:text-purple-600 hover:border-purple-600"
           >
             Create list 🆓
-          </a>
+          </button>
         </div>
       </div>
     </div>
