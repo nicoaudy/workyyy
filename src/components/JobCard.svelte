@@ -31,7 +31,7 @@
       <a
         href={job.directUrl}
         target="_blank"
-        class="text-gray-800 text-sm font-semibold border px-4 py-2 rounded-lg hover:text-pink-600 hover:border-pink-600"
+        class="bg-pink-100 text-pink-600 text-sm font-semibold border px-2 py-1 rounded-lg hover:border-pink-600"
       >APPLY 👉</a>
     </div>
   </div>
