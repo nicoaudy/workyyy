@@ -1,7 +1,19 @@
 <script>
+  import { onMount } from 'svelte';
   import { APP_NAME } from '../constants';
 
   export let segment;
+  let Typeform;
+  let typeformPopup;
+
+  onMount(async () => {
+    const module = await import('svelte-typeform-embed');
+    Typeform = module.default;
+  });
+
+  function openPopup() {
+    return typeformPopup.open();
+  }
 
   let mobileMenu = false;
   const toggleMenu = () => {
@@ -45,6 +57,8 @@
           Join
         </a>
         <button
+          type="button"
+          on:click={openPopup}
           class="text-gray-800 text-sm font-semibold border px-4 py-2 rounded-lg hover:text-purple-600 hover:border-purple-600"
         >
           Create list 🆓
@@ -98,4 +112,14 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="hidden">
+  <svelte:component
+    this={Typeform}
+    url="https://codycanbe20.typeform.com/to/FB8bxLdw"
+    bind:typeformPopup
+    popup
+    autoOpen={false}
+  />
 </div>
