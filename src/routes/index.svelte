@@ -28,18 +28,19 @@
     } catch (e) {}
   };
 
-  const filter = () => {
-    jobs = jobs.filter((item) => {
-      const company = item.company.toLowerCase();
-      const position = item.position.toLowerCase();
-      const location = item.location.toLowerCase();
+  const filter = async () => {
+    try {
+      const request = await fetch(`${API_URL}/give-me-some-data`, {
+        method: 'POST',
+        body: JSON.stringify({
+          search: search,
+        }),
+        headers: { 'Content-Type': 'application/json' },
+      });
 
-      return (
-        company.includes(search.toLowerCase()) ||
-        position.includes(search.toLowerCase()) ||
-        location.includes(search.toLowerCase())
-      );
-    });
+      const response = await request.json();
+      jobs = response;
+    } catch (e) {}
   };
 </script>
 
