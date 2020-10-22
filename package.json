@@ -21,7 +21,8 @@
     "compression": "^1.7.1",
     "express": "^4.17.1",
     "polka": "^0.5.2",
-    "sirv": "^1.0.0"
+    "sirv": "^1.0.0",
+    "svelte-typeform-embed": "^0.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
